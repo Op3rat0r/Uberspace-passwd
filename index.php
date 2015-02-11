@@ -1,4 +1,29 @@
+<?php
+/**
+ * Uberspace passwd
+ *
+ * Author:      Michael Ochmann
+ * Author URL:  http://mike-ochmann.de
+ * Version:     0.5.0
+ * License:     CreativeCommons -- Attribution-NonCommercial-ShareAlike 4.0 International
+ *
+ * You have to leave both attribution comments in the sourcecode.
+ */
+?>
 <!DOCTYPE html>
+<!--
+######################################################################
+## Uberspace passwd                                                 ##
+##                                                                  ##
+## a script by Michael Ochmann                                      ##
+##   -- http://mike-ochmann.de                                      ##
+##   -- miko@massivedynamic.eu                                      ##
+##                                                                  ##
+## find it at GitHub: https://github.com/miko007/Uberspace-passwd/  ##
+##                                                                  ##
+## (C) 2015, Michael Ochmann, Massive Dynamic                       ##
+######################################################################
+-->
 <html>
 <head lang="de">
     <meta charset="UTF-8">
