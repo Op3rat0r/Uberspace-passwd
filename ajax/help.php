@@ -8,5 +8,5 @@
 </p>
 <p>
     Sollten Sie Bugs feststellen, wenden Sie sich bitte an<br />
-    <b>ochmann.m[at]kayos.eu</b>
+    <b>username[at]domain.de</b>
 </p>
