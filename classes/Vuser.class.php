@@ -7,16 +7,16 @@
  */
 class Vuser {
 	private $passwordHash;
-	private $kayosID;
+	private $companyID;
 	private $isValidUser;
 
 	/**
 	 * Constructor
 	 *
-	 * @param $kayosID
+	 * @param $companyID
 	 */
-	public function __construct($kayosID) {
-		$this->kayosID     = $kayosID;
+	public function __construct($companyID) {
+		$this->companyID     = $companyID;
 		$this->isValidUser = $this->getUserInfo();
 	}
 
@@ -26,7 +26,7 @@ class Vuser {
 	 * @return bool
 	 */
 	private function getUserInfo() {
-		$info = shell_exec("dumpvuser " . escapeshellarg($this->kayosID));
+		$info = shell_exec("dumpvuser " . escapeshellarg($this->companyID));
 		$info = explode("\n", $info);
 		if ($info == "")
 			return false;
@@ -67,7 +67,7 @@ class Vuser {
 	 * @return string
 	 */
 	public function setPassword($password) {
-		shell_exec("echo -e " . escapeshellarg($password . "\n" . $password) . " | vpasswd " . escapeshellarg($this->kayosID));
+		shell_exec("echo -e " . escapeshellarg($password . "\n" . $password) . " | vpasswd " . escapeshellarg($this->companyID));
 
 		return "1";
 	}
