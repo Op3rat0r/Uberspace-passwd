@@ -5,7 +5,7 @@ require_once("../classes/VuserManager.class.php");
 /**
  * POST variables
  */
-@$kayosid        = (string) $_POST["kayosid"];
+@$companyid        = (string) $_POST["companyid"];
 @$oldpass        = (string) $_POST["oldpass"];
 @$newpass        = (string) $_POST["newpass"];
 @$newpassconf    = (string) $_POST["newpassconf"];
@@ -13,14 +13,14 @@ require_once("../classes/VuserManager.class.php");
 /**
  * if POST variables not set, abort
  */
-if (!isset($kayosid) || !isset($oldpass) || !isset($newpass) || !isset($newpassconf)) {
+if (!isset($companyid) || !isset($oldpass) || !isset($newpass) || !isset($newpassconf)) {
     echo "500";
     exit;
 }
 /**
  * if POST variables empty, abort
  */
-if ($kayosid == "" || $oldpass == "" || $newpassconf == "" || $newpass == "") {
+if ($companyid == "" || $oldpass == "" || $newpassconf == "" || $newpass == "") {
     echo "500";
     exit;
 }
@@ -34,7 +34,7 @@ if ($newpass != $newpassconf) {
 /**
  * if submitted username is longer than 15 characters, abort
  */
-if (strlen($kayosid) > 15) {
+if (strlen($companyid) > 15) {
     echo "500";
     exit;
 }
@@ -42,7 +42,7 @@ if (strlen($kayosid) > 15) {
 /**
  * Object from type "Vuser"
  */
-$user = new Vuser($kayosid);
+$user = new Vuser($companyid);
 
 /**
  * Object from type "VuserManager"
@@ -60,12 +60,12 @@ if (!$user->validUser()) {
 /**
  * add user to attempts log if not exists
  */
-$userHandler->maybeAddUser($kayosid);
+$userHandler->maybeAddUser($companyid);
 
 /**
  * if user has entered wrong password too often, abort
  */
-if ($userHandler->isLimited($kayosid)) {
+if ($userHandler->isLimited($companyid)) {
     echo "600";
     exit;
 }
@@ -75,9 +75,9 @@ if ($userHandler->isLimited($kayosid)) {
  */
 if (!$user->validPassword($oldpass)) {
     echo "500";
-    $userHandler->increaseAttempts($kayosid);
+    $userHandler->increaseAttempts($companyid);
     exit;
 }
 
-$userHandler->clearAttempts($kayosid);
+$userHandler->clearAttempts($companyid);
 echo $user->setPassword($newpass);
