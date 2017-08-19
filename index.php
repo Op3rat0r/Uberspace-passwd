@@ -33,7 +33,7 @@
     <script src="javascript/passwd.js"></script>
     <link rel="stylesheet" type="text/css" href="css/passwd.css"  media="screen and (min-width: 601px)" />
     <link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (min-device-width : 320px) and (max-device-width : 480px) , screen and (max-width: 600px)">
-    <link rel="shortcut icon" href="https://passwd.kayos.eu/favicon.png" />
+    <link rel="shortcut icon" href="https://passwd.subdomain.de/favicon.png" />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
@@ -41,9 +41,9 @@
 
 <a href="ajax/help.php" class="help" title="Hilfe"></a>
 <section class="form">
-    <h1><img src="images/logo_kayos.png" alt="KAYOS UG" style="width: 50px; height: 50px;" /><br />Passwort ändern</h1>
+    <h1><img src="images/logo_kayos.png" alt="Company Name" style="width: 50px; height: 50px;" /><br />Passwort ändern</h1>
     <form action="ajax/verify.php" method="post" id="userdata">
-        <input type="text" name="kayosid" placeholder="KAYOS-ID" autocomplete="off" required="required" />
+        <input type="text" name="companyid" placeholder="COMPANY-ID" autocomplete="off" required="required" />
         <input type="password" name="oldpass" placeholder="altes Passwort" id="pw" required="required" />
         <p>
             <input type="password" name="newpass" placeholder="neues Passwort" required="required" />
